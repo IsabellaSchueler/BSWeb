@@ -1,6 +1,7 @@
 const quizForm = document.getElementById('quiz-form');
 const resultsBox = document.getElementById('quiz-results');
 
+// This is where the correct answers for each question are stored
 const correctAnswers = {
   q1: 'unique',
   q2: 'c',
@@ -9,6 +10,7 @@ const correctAnswers = {
   q5: ['a', 'c', 'd']
 };
 
+// This is where the correct answer labels for each question are stored
 const answerLabels = {
   q1: 'unique',
   q2: 'Using a unique password and a password manager',
@@ -21,10 +23,12 @@ function normalize(value) {
   return String(value).trim().toLowerCase();
 }
 
+// This function totals the results of the quiz, including the score and a summary of each question
 function renderResults(score, summary) {
   const percent = Math.round((score / 5) * 100);
   const passed = score >= 4;
 
+  // This is where the results are displayed in the results box
   resultsBox.innerHTML = `
     <div class="result-banner ${passed ? 'pass' : 'fail'}">
       <h3>${passed ? 'Pass' : 'Fail'}</h3>
@@ -43,6 +47,7 @@ function renderResults(score, summary) {
   `;
 }
 
+// This event listener handles the form submission, calculates the score, and displays the results
 quizForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -62,6 +67,7 @@ quizForm.addEventListener('submit', function (event) {
   let score = 0;
   const summary = [];
 
+// This section checks the answers for questions 1-4, which are single-choice questions
   const q1Correct = answers.q1 === correctAnswers.q1;
   score += q1Correct ? 1 : 0;
   summary.push({
@@ -98,6 +104,7 @@ quizForm.addEventListener('submit', function (event) {
     correctAnswer: answerLabels.q4
   });
 
+// This section checks the answers for question 5, which allows multiple selections
   const correctSet = [...correctAnswers.q5].sort();
   const selectedSet = answers.q5;
   const q5Correct = selectedSet.length === correctSet.length && selectedSet.every((item, index) => item === correctSet[index]);
@@ -115,6 +122,7 @@ quizForm.addEventListener('submit', function (event) {
   renderResults(score, summary);
 });
 
+// This event listener handles the form reset, clearing the results box and resetting its class
 quizForm.addEventListener('reset', function () {
   resultsBox.innerHTML = '';
   resultsBox.className = 'quiz-results';
