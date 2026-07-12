@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Cybersecurity Basics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cybersecurity Basics</h1>
+    <p>Simple learning pages for safe online habits.</p>
+    <nav class="main-nav">
+      <a href="bb1.html">Home</a>
+      <a href="main-menu.html">Main Menu</a>
+      <a href="topic1.html">Topic 1</a>
+      <a href="topic2.html">Topic 2</a>
+      <a href="references.html">References</a>
+      <a href="about.html">About</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+  <main>
+    <section class="quiz-section">
+      <h2>Self-Assessment Quiz</h2>
+      <p>Complete this quiz to check how well you understand the cybersecurity ideas covered on this site.</p>
+      <form id="quiz-form">
+        <div class="question">
+          <label for="q1">1. Fill in the blank: A strong password should be long and ______.</label>
+          <input type="text" id="q1" name="q1" placeholder="Type your answer">
+        </div>
+
+        <div class="question">
+          <p>2. Which action best protects your online accounts?</p>
+          <label class="option"><input type="radio" name="q2" value="a"> Using the same password for every site</label>
+          <label class="option"><input type="radio" name="q2" value="b"> Sharing your password with a trusted friend</label>
+          <label class="option"><input type="radio" name="q2" value="c"> Using a unique password and a password manager</label>
+          <label class="option"><input type="radio" name="q2" value="d"> Writing your password on paper near your computer</label>
+        </div>
+
+        <div class="question">
+          <p>3. What is the best response when you receive a suspicious message asking for your password?</p>
+          <label class="option"><input type="radio" name="q3" value="a"> Ignore it and verify the sender through a trusted source</label>
+          <label class="option"><input type="radio" name="q3" value="b"> Reply immediately with your password</label>
+          <label class="option"><input type="radio" name="q3" value="c"> Click the link to see what happens</label>
+          <label class="option"><input type="radio" name="q3" value="d"> Forward it to everyone in your contacts</label>
+        </div>
+
+        <div class="question">
+          <p>4. Which of the following is a common sign of phishing?</p>
+          <label class="option"><input type="radio" name="q4" value="a"> A polite greeting</label>
+          <label class="option"><input type="radio" name="q4" value="b"> A message from a known contact with a normal tone</label>
+          <label class="option"><input type="radio" name="q4" value="c"> A message that includes your full name correctly</label>
+          <label class="option"><input type="radio" name="q4" value="d"> A urgent request for personal information or payment</label>
+        </div>
+
+        <div class="question">
+          <p>5. Select all practices that help reduce phishing risk.</p>
+          <label class="option"><input type="checkbox" name="q5" value="a"> Hover over links before clicking</label>
+          <label class="option"><input type="checkbox" name="q5" value="b"> Share passwords in group chats</label>
+          <label class="option"><input type="checkbox" name="q5" value="c"> Check the sender address carefully</label>
+          <label class="option"><input type="checkbox" name="q5" value="d"> Verify the message through a trusted channel</label>
+        </div>
+
+        <div class="quiz-actions">
+          <button type="submit" class="primary-btn">Submit Quiz</button>
+          <button type="reset" class="secondary-btn">Retake Quiz</button>
+        </div>
+      </form>
+
+      <div id="quiz-results" class="quiz-results" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 Cybersecurity Basics</p>
+  </footer>
+  <script src="quiz.js"></script>
+</body>
+</html>
