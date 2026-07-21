@@ -1,11 +1,20 @@
+/* Base page styles: typography, background, and global spacing */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #f5f7fb;
   color: #22313f;
   line-height: 1.6;
+  font-size: 16px;
 }
 
+/* Make images responsive so they scale with the page width */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header styling for the page title and top navigation area */
 header {
   background: linear-gradient(135deg, #1f4e79, #2a7f62);
   color: #fff;
@@ -22,6 +31,7 @@ header p {
   opacity: 0.95;
 }
 
+/* Navigation menu styling for the shared site header */
 .main-nav {
   display: flex;
   flex-wrap: wrap;
@@ -40,12 +50,14 @@ header p {
   background: rgba(255,255,255,0.28);
 }
 
+/* Main content area styling to center pages and provide comfortable reading width */
 main {
   max-width: 980px;
   margin: 0 auto;
   padding: 24px 20px 40px;
 }
 
+/* Section cards for page content with soft shadows and rounded corners */
 section {
   background: #fff;
   padding: 20px;
@@ -59,6 +71,7 @@ section h2 {
   color: #1f4e79;
 }
 
+/* Grid layout for cards used on the main menu and home page */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -81,6 +94,41 @@ section h2 {
   font-weight: bold;
 }
 
+/* Topic page images are responsive and styled to match the card aesthetic */
+.topic-image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  margin: 16px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+/* Table styling for reference and key concept summaries */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+
+th,
+td {
+  border: 1px solid #dce4ea;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background: #eef4f8;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -88,6 +136,7 @@ footer {
   color: #fff;
 }
 
+/* Quiz form layout and spacing for question sections */
 .quiz-section form {
   display: grid;
   gap: 16px;
@@ -200,4 +249,60 @@ footer {
 ul {
   margin: 0;
   padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  header {
+    padding: 20px 16px 16px;
+  }
+
+  main {
+    padding: 16px 14px 32px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav a {
+    text-align: center;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+}
+
+/* Small-screen adjustments to improve readability on phones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 14px;
+  }
+
+  .question,
+  .card {
+    padding: 12px;
+  }
+
+  .option {
+    font-size: 14px;
+  }
 }
